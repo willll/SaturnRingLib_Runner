@@ -1,0 +1,1 @@
+/bin/bash -c 'cd /app/SaturnRingLib/Tests && ./run_tests_mednafen.bat'
