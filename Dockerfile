@@ -18,17 +18,6 @@ ENV SDL_VIDEODRIVER=dummy
 # Add /app to the PATH
 ENV PATH="/app:${PATH}"
 
-# Clone the specified branch of the repository
-RUN git clone --branch PCX_loader --single-branch --depth 1 https://github.com/ReyeMe/SaturnRingLib.git && \
-    cd SaturnRingLib && \
-    git submodule update --init --recursive
-
-# Set working directory to the Tests directory
-WORKDIR /app/SaturnRingLib/Tests
-
-# Build the project
-RUN make all
-
 # Download and extract Mednafen.Linux.zip
 WORKDIR /app
 RUN curl -L -o Mednafen.Linux.zip https://github.com/willll/mednafenSSDev/releases/download/initial/Mednafen.Linux.zip && \
